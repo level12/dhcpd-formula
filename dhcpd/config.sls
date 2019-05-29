@@ -25,6 +25,8 @@ dhcpd.conf:
     - group: root
 {% endif %}
     - mode: 644
+    - require:
+      - pkg: dhcpd
     - watch_in:
       - service: dhcpd
 
