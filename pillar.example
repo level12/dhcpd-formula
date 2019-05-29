@@ -2,6 +2,7 @@ dhcpd:
     # Change some defaults
     lookup:
       enable: False
+      enable_only: False
 
     domain_name: example.org
     domain_name_servers:

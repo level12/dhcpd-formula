@@ -27,8 +27,10 @@ dhcpd.conf:
     - mode: 644
     - require:
       - pkg: dhcpd
+{% if not dhcpd.enable_only %}
     - watch_in:
       - service: dhcpd
+{% endif %}
 
 {% if dhcpd.service_config is defined %}
 
@@ -45,7 +47,9 @@ service_config:
     - group: root
 {% endif %}
     - mode: 644
+{% if not dhcpd.enable_only %}
     - watch_in:
       - service: dhcpd
+{% endif %}
 
 {% endif %}
