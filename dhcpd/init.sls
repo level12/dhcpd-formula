@@ -3,7 +3,7 @@
 dhcpd:
   pkg.installed:
     - name: {{ dhcpd.server }}
-{% if dhcpd.enable_only %}
+{% if dhcpd.enable_only is defined and dhcpd.enable_only %}
   service.enabled:
     - name: {{ dhcpd.service }}
 {% elif dhcpd.enable is defined and not dhcpd.enable %}
